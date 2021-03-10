@@ -1,4 +1,4 @@
-# Barefoot Nomad
+# Lenycode
 Welcome to Lenycode!
 
 ## To get started
