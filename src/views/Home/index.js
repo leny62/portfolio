@@ -9,6 +9,8 @@ import backgroundImage from '../../assets/images/cool-background.png';
 import bg from '../../assets/images/bg.png'
 import { red } from '@material-ui/core/colors';
 import Skills from '../About/Skills';
+import LenyImage1 from '../../assets/images/Lenyim1.png';
+import LenyImage2 from '../../assets/images/lenyIm2.png';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -90,6 +92,20 @@ const useStyles = makeStyles((theme) => ({
             opacity: 0.7
         }    
     },
+    image1: {
+        width: 400,
+        height: 400,
+        paddingLeft: '2',
+        marginLeft: '2',
+        padding: theme.spacing(1)
+    },
+    image2: {
+        width: 400,
+        height: 400,
+        paddingLeft: '2',
+        marginLeft: '2',
+        padding: theme.spacing(1)
+    },
     anchor: {
         padding: theme.spacing(1),
         textDecoration: 'none',
@@ -144,9 +160,14 @@ const Landing = () => {
         <div className={classes.pageContainer}>
         <Typography>
           <h1>Hello, Welcome</h1>
+          <h1>Welcome to Lenycode:</h1>
+          <h3>I develop software products...</h3>
         </Typography>
+        <div>
+        <img src={LenyImage1} alt="LenyImage" className={classes.image1}/>
+        <img src={LenyImage2} alt="LenyImage" className={classes.image2}/>
         </div>
-        <Skills />
+        </div>
         <Footer />
         </>
     )
