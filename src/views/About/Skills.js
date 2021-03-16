@@ -1,13 +1,7 @@
 import React from 'react'
-import Footer from '../../components/footer';
-import Header from '../../components/header/';
 import Typography from '@material-ui/core/Typography';
-import { CssBaseline } from '@material-ui/core';
-import { MainContainer } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import backgroundImage from '../../assets/images/cool-background.png';
 import bg from '../../assets/images/bg.png'
-import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -139,13 +133,11 @@ const Skills = () => {
     const classes = useStyles();
     return (
         <>
-        <Header />
         <div className={classes.pageContainer}>
         <Typography>
           <h1>Hello, Welcome</h1>
         </Typography>
         </div>
-        <Footer />
         </>
     )
 }

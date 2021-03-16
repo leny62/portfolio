@@ -1,6 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import LenyCodeLogo from './assets/icons/LenycodeLogo1.png';
 import './App.css';
 import Routes from './Routes';
 

@@ -2,13 +2,8 @@ import React from 'react'
 import Footer from '../../components/footer';
 import Header from '../../components/header/';
 import Typography from '@material-ui/core/Typography';
-import { CssBaseline } from '@material-ui/core';
-import { MainContainer } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import backgroundImage from '../../assets/images/cool-background.png';
 import bg from '../../assets/images/bg.png'
-import { red } from '@material-ui/core/colors';
-import Skills from '../About/Skills';
 import LenyImage1 from '../../assets/images/Lenyim1.png';
 import LenyImage2 from '../../assets/images/lenyIm2.png';
 
@@ -22,6 +17,7 @@ const useStyles = makeStyles((theme) => ({
         background: '#FFFDFD',
         opacity: 0.8,
         alignItems: 'center',
+        paddingTop: '30rem',
         zIndex: 5,
         borderTop: '2px solid #E0E0E0',
         '@media(max-width: 610px)': {
@@ -30,7 +26,6 @@ const useStyles = makeStyles((theme) => ({
         },
         '@media(max-width: 405px)': {
             justifyContent: 'unset',
-            // height: '100px'
         }
     },
     pageContainer: {
@@ -39,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
-        
+        marginTop: '4.3rem',
         backgroundImage: `url(${bg})`,
         backgroundRepeat: 'no-repeat',
         '@media(max-width: 664px)': {
@@ -160,6 +155,7 @@ const Landing = () => {
         <div className={classes.pageContainer}>
         <Typography>
           <h1>Hello, Welcome</h1>
+          <br />
           <h1>Welcome to Lenycode:</h1>
           <h3>I develop software products...</h3>
         </Typography>

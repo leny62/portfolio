@@ -2,21 +2,19 @@ import React from 'react'
 import Footer from '../../components/footer';
 import Header from '../../components/header/';
 import Typography from '@material-ui/core/Typography';
-import { CssBaseline } from '@material-ui/core';
-import { MainContainer } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles';
-import backgroundImage from '../../assets/images/cool-background.png';
-import bg from '../../assets/images/bg.png'
-import { red } from '@material-ui/core/colors';
+import Grid from '@material-ui/core/Grid';
+import Skills from './Skills';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        marginTop: '4.2rem',
         flexDirection: 'row',
         justifyContent: 'space-around',
         width:'100%',
         height: '100%',
-        background: '#FFFDFD',
+        background: '#FFFFFF',
         opacity: 0.8,
         alignItems: 'center',
         zIndex: 5,
@@ -31,13 +29,15 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     pageContainer: {
+        marginTop: '4.48rem',
         width: '100%',
         color: 'white',
         height: '100vh',
         display: 'flex',
         justifyContent: 'center',
+        backgroundColor: '#FFFFFF',
         
-        backgroundImage: `url(${bg})`,
+        // backgroundImage: `url(${bg})`,
         backgroundRepeat: 'no-repeat',
         '@media(max-width: 664px)': {
             padding: theme.spacing(0),
@@ -118,6 +118,30 @@ const useStyles = makeStyles((theme) => ({
             padding: theme.spacing(0),
         }  
     },
+    grid: {
+        color: '#000000',
+        '@media(max-width: 710px)': {
+            padding: theme.spacing(3),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginTop: '10rem'
+        }  
+    },
+    h1: {
+        color: '#42645A',
+    },
+    about: {
+        padding: theme.spacing(4),
+        display: 'flex',
+        flexDirection: 'column',
+        '@media(max-width: 1010px)': {
+            padding: theme.spacing(2),
+            display: 'flex',
+            flexDirection: 'column'
+        }  
+    },
+
     body: {
         fontFamily: 'Poppins, sans-serif',
         color: '#42645A',
@@ -141,10 +165,36 @@ const About = () => {
         <>
         <Header />
         <div className={classes.pageContainer}>
-        <Typography>
-          <h1>Hello, Welcome</h1>
-        </Typography>
+        <div className={classes.about}>
+            <h1 style= {{color: '#42645A', fontSize: '4rem'}}>
+                I'M AN
+                <br />
+                INNOVATOR
+
+            </h1>
+        <Grid container spacing={3} className={classes.grid}>
+        <Grid item xs={4}>
+          <h1 style= {{color: '#42645A'}}>WHERE I HAVE BEEN</h1>
+          <Typography>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo eget in lectus dui risus, facilisi sagittis. Justo, eget velit in in nunc pharetra, porttitor morbi viverra. Ullamcorper urna, feugiat quam morbi quam amet, quisque adipiscing. Enim tortor vel tellus commodo libero, enim sagittis sed. Pharetra felis eget nulla est diam duis non.
+          </Typography>
+        </Grid>
+        <Grid item xs={4}>
+              <h1 style= {{color: '#42645A'}}>WHAT AM DOING</h1>
+              <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo eget in lectus dui risus, facilisi sagittis. Justo, eget velit in in nunc pharetra, porttitor morbi viverra. Ullamcorper urna, feugiat quam morbi quam amet, quisque adipiscing. Enim tortor vel tellus commodo libero, enim sagittis sed. Pharetra felis eget nulla est diam duis non.
+              </Typography>
+        </Grid>
+        <Grid item xs={4}>
+              <h1 style= {{color: '#42645A'}}>WHAT I HOPE TO DO</h1>
+              <Typography>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo eget in lectus dui risus, facilisi sagittis. Justo, eget velit in in nunc pharetra, porttitor morbi viverra. Ullamcorper urna, feugiat quam morbi quam amet, quisque adipiscing. Enim tortor vel tellus commodo libero, enim sagittis sed. Pharetra felis eget nulla est diam duis non.
+              </Typography>
+        </Grid>
+      </Grid>
         </div>
+        </div>
+        <Skills />
         <Footer />
         </>
     )

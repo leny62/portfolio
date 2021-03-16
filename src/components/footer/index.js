@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
         flexDirection: 'row',
         justifyContent: 'space-around',
         width:'100%',
-        height: 70,
-        background: '#524E4E',
+        height: 60,
+        background: '#C7C3C3',
         opacity: 0.8,
         alignItems: 'center',
         zIndex: 5,
-        borderTop: '2px solid #E0E0E0',
+        borderTop: '0.001px solid #E0E0E0',
         '@media(max-width: 610px)': {
             flexDirection: 'column',
             paddingTop: theme.spacing(1)

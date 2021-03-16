@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Landing from '../views/Home/';
 import Contact from '../views/Contact/Contact';
+import About from '../views/About';
 
 function index() {
   return (
@@ -9,6 +10,7 @@ function index() {
     <div>
     <Switch>
           <Route exact path="/" component={Landing} />
+          <Route exact path="/about" component={About} />
           <Route exact path="/contact" component={Contact} />
     </Switch>
     </div>
