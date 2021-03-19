@@ -5,7 +5,6 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import bg from '../../assets/images/bg.png'
 import LenyImage1 from '../../assets/images/Lenyim1.png';
-import LenyImage2 from '../../assets/images/lenyIm2.png';
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -98,13 +97,24 @@ const useStyles = makeStyles((theme) => ({
         width: 400,
         height: 400,
         paddingLeft: '2',
+        scrollPaddingRight: '2',
         marginLeft: '2',
-        padding: theme.spacing(1)
+        padding: theme.spacing(1),
+        backgroundImage: `url(${LenyImage1})`,
+        transform: 'rotate(-10deg)',
+        position: 'absolute',
+        left: '911px',
+        top: '-1074.95px'
     },
     anchor: {
         padding: theme.spacing(1),
         textDecoration: 'none',
         color: '#42645A',
+        '@media(max-width: 400px)': {
+            padding: theme.spacing(0),
+        }
+    },
+    intro: {
         '@media(max-width: 400px)': {
             padding: theme.spacing(0),
         }
@@ -130,6 +140,13 @@ const useStyles = makeStyles((theme) => ({
             padding: theme.spacing(0),
         }  
     },
+    avatar: {
+        position: 'absolute',
+        width: '500px',
+        height: '500px',
+        left: '911px',
+        top: '200px'
+    },
     body: {
         fontFamily: 'Poppins, sans-serif',
         color: '#42645A',
@@ -153,15 +170,15 @@ const Landing = () => {
         <>
         <Header />
         <div className={classes.pageContainer}>
-        <Typography>
-          <h1>Hello, Welcome</h1>
+        <Typography className={classes.intro}>
+          <h1>Hello,</h1> 
           <br />
           <h1>Welcome to Lenycode:</h1>
           <h3>I develop software products...</h3>
         </Typography>
-        <div>
+        <div className = {classes.avatar}>
         <img src={LenyImage1} alt="LenyImage" className={classes.image1}/>
-        <img src={LenyImage2} alt="LenyImage" className={classes.image2}/>
+        <div className={classes.image2}>Hello</div>
         </div>
         </div>
         <Footer />
