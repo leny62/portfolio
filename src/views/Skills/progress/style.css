@@ -1,0 +1,38 @@
+.skills {
+    background: white;
+    margin-top: 9em;
+    display: flex;
+    padding: 3em;
+    box-shadow: 2px 2px 12px rgb(0, 0, 0.003);
+}
+.logo {
+      font-size: x-large;
+      background-color: white;
+    }
+.main {
+      display: flex;
+      flex-direction: row;
+      margin-top: 1em;
+      margin-bottom: 1em;
+}
+.skills-bar {
+        display: grid;
+        grid-template-columns: repeat(10, 1fr);
+        margin-left: 1em;
+}
+.act {
+          height: 4em;
+          width: 4em;
+          border: 1px solid gray;
+          margin-left: 0.3em;
+          border-radius: 50%;
+          background-color: rgb(11, 71, 37);
+        }
+.not-act {
+          height: 4em;
+          width: 4em;
+          border: 1px solid gray;
+          margin-left: 0.3em;
+          border-radius: 50%;
+          background-color: white;
+}

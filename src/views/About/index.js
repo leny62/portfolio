@@ -4,7 +4,7 @@ import Header from '../../components/header/';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-import Skills from './Skills';
+import Skills from '../Skills';
 
 const useStyles = makeStyles((theme) => ({
     root: {
