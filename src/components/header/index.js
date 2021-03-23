@@ -43,13 +43,43 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 5,
         borderTop: '2px solid #E0E0E0',
         textDecoration: 'none',
-        '@media(max-width: 610px)': {
-            flexDirection: 'column',
-            paddingTop: theme.spacing(1)
+      '@media(max-width: 1305px)': {
+          justifyContent: 'space-between',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'left',
+          width: '100%',
+          height: 70,
+          position: 'relative'
+
+      },
+        '@media(max-width: 920px)': {
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            paddingTop: theme.spacing(2),
+            position: 'relative'
         },
-        '@media(max-width: 405px)': {
-            justifyContent: 'unset',
-        }
+        '@media(max-width: 805px)': {
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            position: 'relative'
+        },
+        '@media(max-width: 605px)': {
+          justifyContent: 'space-between',
+          flexDirection: 'row',
+          position: 'relative'
+      }
+    },
+    logo: {
+      width: "10%",
+      margin: 0,
+      padding: 2,
+      '@media(max-width: 1355px)': {
+        justifyContent: 'center',
+        height: '100px',
+        paddingLeft: 10,
+
+    },
     },
     icon: {
         width: 100,
@@ -159,11 +189,7 @@ const Header = () => {
         className={classes.root}
       >
         <div
-          style={{
-            width: "10%",
-            margin: 0,
-            padding: 2,
-          }}
+          className={classes.logo}
         >
           <img
             style={{
@@ -171,7 +197,7 @@ const Header = () => {
               padding: 0,
               width: "88px",
               height: "98%",
-              cursor: "pointer",
+              cursor: "pointer"
             }}
             src={LenyCodeLogo}
             alt="Lenycode Logo"

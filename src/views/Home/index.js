@@ -32,38 +32,49 @@ const useStyles = makeStyles((theme) => ({
         color: 'white',
         height: '100vh',
         display: 'flex',
-        justifyContent: 'center',
+        flexDirection: 'row',
+        justifyContent: 'space-between',
         marginTop: '4.3rem',
         backgroundImage: `url(${bg})`,
         backgroundRepeat: 'no-repeat',
-        '@media(max-width: 664px)': {
+        '@media(max-width: 665px)': {
             padding: theme.spacing(0),
-            marginLeft: '5%',
+            marginLeft: '0',
             width: '100%',
             height: '100vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: '30%',
+            backgroundRepeat: 'no-repeat'
         },
-        '@media(max-width: 604px)': {
+        '@media(max-width: 554px)': {
             padding: theme.spacing(0),
-            marginLeft: '5%',
+            marginLeft: '0',
             width: '100%',
             height: '100vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            marginTop: '30%',
+            marginTop: '0',
+            backgroundRepeat: 'no-repeat',
+        },
+        '@media(max-width: 605px)': {
+            width: '100%',
+            height: '100vh',
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            marginTop: '0',
+            margingLeft: '0'
         },
         '@media(max-width: 1281px)': {
-            marginLeft: '5%',
             width: '100%',
             height: '100vh',
             display: 'flex',
-            justifyContent: 'center',
+            justifyContent: 'space-between',
             alignItems: 'center',
-            marginTop: '10%',
+            marginTop: '0',
         },
     },
     icon: {
@@ -99,12 +110,9 @@ const useStyles = makeStyles((theme) => ({
         paddingLeft: '2',
         scrollPaddingRight: '2',
         marginLeft: '2',
-        padding: theme.spacing(1),
-        backgroundImage: `url(${LenyImage1})`,
         transform: 'rotate(-10deg)',
-        position: 'absolute',
-        left: '911px',
-        top: '-1074.95px'
+        marginTop: '-90%',
+        zIndex: -5,
     },
     anchor: {
         padding: theme.spacing(1),
@@ -115,6 +123,19 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     intro: {
+        position: 'absolute',
+        height: '5px',
+        marginTop: '4rem',
+        marginLeft: '5rem',
+        padding: '5rem',
+        fontFamily: 'Roboto',
+        fontStyle: 'normal',
+        fontWeight: 'bold',
+        fontSize: '35px',
+        lineHeight: '20px',
+        display: 'flex',
+        flexDirection: 'column',
+        color: '#FFFFFF',
         '@media(max-width: 400px)': {
             padding: theme.spacing(0),
         }
@@ -178,7 +199,8 @@ const Landing = () => {
         </Typography>
         <div className = {classes.avatar}>
         <img src={LenyImage1} alt="LenyImage" className={classes.image1}/>
-        <div className={classes.image2}>Hello</div>
+        <img src={LenyImage1} alt="LenyImage" className={classes.image2}/>
+        {/* <div className={classes.image2}>Hello</div> */}
         </div>
         </div>
         <Footer />

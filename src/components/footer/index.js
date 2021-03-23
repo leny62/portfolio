@@ -24,18 +24,57 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         zIndex: 5,
         borderTop: '0.001px solid #E0E0E0',
-        '@media(max-width: 610px)': {
-            flexDirection: 'column',
-            paddingTop: theme.spacing(1)
+        '@media(max-width: 1305px)': {
+            display: 'flex',
+            justifyContent: 'space-around',
+            flexDirection: 'row',
+            alignItems: 'center',
+            width: '100%',
+            height: 60,
+            zIndex: 5,
+            position: 'relative'
+  
         },
-        '@media(max-width: 405px)': {
-            justifyContent: 'unset',
-            // height: '100px'
+          '@media(max-width: 920px)': {
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              paddingTop: theme.spacing(2),
+              position: 'relative'
+          },
+          '@media(max-width: 805px)': {
+              justifyContent: 'space-between',
+              flexDirection: 'row',
+              position: 'relative'
+          },
+          '@media(max-width: 655px)': {
+            justifyContent: 'space-between',
+            flexDirection: 'row',
+            position: 'relative'
+          },
+        '@media(max-width: 1210px)': {
+            display: 'flex',
+            justifyContent: 'space-around',
+            flexDirection: 'row',
+            alignItems: 'center',
+            width: '100%',
+            height: 60,
+            zIndex: 5,
+            position: 'relative'
+        },
+        '@media(max-width: 1100px)': {
+            display: 'flex',
+            justifyContent: 'space-around',
+            flexDirection: 'row',
+            alignItems: 'center',
+            width: '100%',
+            height: 60,
+            zIndex: 5,
+            position: 'relative'
         }
     },
     icon: {
-        width: 40,
-        height: 40,
+        width: 52,
+        height: 42,
         padding: theme.spacing(1),
         "&:hover": {
             transform: 'scale(1.2)',
@@ -51,7 +90,10 @@ const useStyles = makeStyles((theme) => ({
     body: {
         fontFamily: 'Poppins, sans-serif',
         color: 357676,
+        alignItems: 'center',
+        paddingRight: '25rem',
         '@media(max-width: 400px)': {
+            justifyContent: 'space-around',
             paddingTop: 20,
             marginLeft: 25,
             color: 357676
