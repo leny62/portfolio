@@ -24,22 +24,15 @@ export const useStyles = makeStyles((theme) => ({
             width: '100%',
         },
     },
-    // mainContainer: {
-    //     width: '100%',
-    //     height: '90vh'
-    // },
     pos:{
-        // marginTop: 92,
         width: 500,
         height: 540,
-        // marginBottom: 10,
         boxShadow:'0px 4px 20px rgba(0, 0, 0, 0.07)',
         borderRadius: 5,
         margin: 'auto',
     
         [theme.breakpoints.up('md')]: {
             padding: '10px 20px 30px 57px'
-            // marginRight: -195,
         },
         [theme.breakpoints.between('sm', 'md')]: {
             padding: '20px 20px 20px 50px',
@@ -120,6 +113,7 @@ export const useStyles = makeStyles((theme) => ({
         color: 'white',
         height: '100vh',
         display: 'flex',
+        marginTop: '4rem',
         justifyContent: 'center',
         alignItems: 'center',
         backgroundImage: `url(${bg})`,

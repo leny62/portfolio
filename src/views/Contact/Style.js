@@ -73,6 +73,7 @@ const useStyles = makeStyles((theme) => ({
     body: {
         fontFamily: 'Poppins, sans-serif',
         color: '#42645A',
+        paddingTop: '20rem',
         '@media(max-width: 400px)': {
             paddingTop: 20,
             marginLeft: 25,
