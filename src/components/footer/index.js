@@ -24,14 +24,14 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         zIndex: 5,
         borderTop: '0.001px solid #E0E0E0',
-        '@media(max-width: 1305px)': {
+        '@media(max-width: 1024px)': {
+            width: '99.9%',
+            height: 60,
+            zIndex: 5,
             display: 'flex',
             justifyContent: 'space-around',
             flexDirection: 'row',
             alignItems: 'center',
-            width: '100%',
-            height: 60,
-            zIndex: 5,
             position: 'relative'
   
         },
@@ -51,26 +51,11 @@ const useStyles = makeStyles((theme) => ({
             flexDirection: 'row',
             position: 'relative'
           },
-        '@media(max-width: 1210px)': {
-            display: 'flex',
-            justifyContent: 'space-around',
-            flexDirection: 'row',
-            alignItems: 'center',
+          '@media(max-width: 375px)': {
             width: '100%',
-            height: 60,
-            zIndex: 5,
-            position: 'relative'
-        },
-        '@media(max-width: 1100px)': {
             display: 'flex',
-            justifyContent: 'space-around',
             flexDirection: 'row',
-            alignItems: 'center',
-            width: '100%',
-            height: 60,
-            zIndex: 5,
-            position: 'relative'
-        }
+          },
     },
     icon: {
         width: 52,
@@ -79,13 +64,28 @@ const useStyles = makeStyles((theme) => ({
         "&:hover": {
             transform: 'scale(1.2)',
             opacity: 0.7
-        }    
+        },
+        '@media(max-width: 375px)': {
+            width: 35,
+            height: 30,
+            padding: theme.spacing(1),
+            display: 'flex',
+            flexDirection: 'row'
+
+        },    
     },
     anchor: {
         padding: theme.spacing(1),
         '@media(max-width: 400px)': {
             padding: theme.spacing(0),
-        }
+        },
+        '@media(max-width: 375px)': {
+            width: 35,
+            height: 30,
+            padding: theme.spacing(1),
+            display: 'flex',
+            flexDirection: 'column'
+        },    
     },
     body: {
         fontFamily: 'Poppins, sans-serif',
@@ -96,6 +96,15 @@ const useStyles = makeStyles((theme) => ({
             justifyContent: 'space-around',
             paddingTop: 20,
             marginLeft: 25,
+            color: 357676
+        },
+        '@media(max-width: 375px)': {
+            fontSize: '12px',
+            paddingRight: 0,
+            paddingTop: 0,
+            marginLeft: 0,
+            marginRight: '1rem',
+            marginBottom: '1rem',
             color: 357676
         },
         '@media(max-width: 230px)': {
