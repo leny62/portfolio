@@ -53,6 +53,10 @@ export const useStyles = makeStyles((theme) => ({
         '@media (max-width:470px)': {
             width: 250,
             padding: '10px 20px 30px 30px',
+        },
+        '@media (max-width:375px)': {
+            width: '100%',
+            margin: 0,
         }
     },
     span:{
@@ -70,7 +74,15 @@ export const useStyles = makeStyles((theme) => ({
         padding: '5rem 15rem',
         backgroundColor: '#F4F4F4',
         width: '100%',
-        maxWidth: '80rem'
+        maxWidth: '80rem',
+        '@media (max-width:1024px)': {
+            width: '85%',
+            margin: '70px 0',
+        },
+        '@media (max-width:357px)': {
+            width: '100%',
+            margin: 0
+        },
     },
       
     img:{
@@ -126,7 +138,14 @@ export const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: '30%',
+        // marginTop: '30%',
+        },
+        '@media(max-width: 1024px)': {
+        marginTop: '0rem',
+    },
+    '@media(max-width: 375px)': {
+        margin: 0,
+        width: '100%'
     },
     },
     input: {
