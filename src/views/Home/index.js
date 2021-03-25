@@ -48,12 +48,19 @@ const useStyles = makeStyles((theme) => ({
             marginTop: '30%',
             backgroundRepeat: 'no-repeat'
         },
+        '@media(max-width: 980px)': {
+            padding: theme.spacing(50),
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between'
+        },    
         '@media(max-width: 554px)': {
-            padding: theme.spacing(0),
             marginLeft: '0',
             width: '100%',
             height: '100vh',
+            padding: theme.spacing(50),
             display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'center',
             alignItems: 'center',
             marginTop: '0',
@@ -62,7 +69,9 @@ const useStyles = makeStyles((theme) => ({
         '@media(max-width: 605px)': {
             width: '100%',
             height: '100vh',
+            padding: theme.spacing(50),
             display: 'flex',
+            flexDirection: 'column',
             justifyContent: 'space-between',
             alignItems: 'center',
             marginTop: '0',
@@ -76,6 +85,29 @@ const useStyles = makeStyles((theme) => ({
             alignItems: 'center',
             marginTop: '0',
         },
+        '@media(max-width: 450px)': {
+            padding: theme.spacing(50),
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            backgroundImage: `url(${bg})`,
+            backgroundRepeat: 'no-repeat',
+            width: '10%',
+            height: '100vh',
+            paddingRight: '3.5%',
+            marginLeft: 0,
+            marginRight: 0
+        }, 
+        '@media(max-width: 380px)': {
+            padding: theme.spacing(50),
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'space-between',
+            backgroundImage: `url(${bg})`,
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100vh'
+        },   
     },
     icon: {
         width: 100,
@@ -84,7 +116,12 @@ const useStyles = makeStyles((theme) => ({
         "&:hover": {
             transform: 'scale(1.2)',
             opacity: 0.7
-        }    
+        },
+        "&:active": {
+            transform: 'scale(1.2)',
+            opacity: 0.7,
+            backgroundColor: 'red'
+        }        
     },
     icon1: {
         width: 100,
@@ -102,7 +139,25 @@ const useStyles = makeStyles((theme) => ({
         height: 400,
         paddingLeft: '2',
         marginLeft: '2',
-        padding: theme.spacing(1)
+        padding: theme.spacing(1),
+        '@media(max-width: 1159px)': {
+            padding: theme.spacing(0),
+            paddingRight: 0,
+        },
+        '@media(max-width: 450px)': {
+            left: '30%',
+            width: '300px',
+            height: '300px',
+            marginLeft: '0%',
+            paddingLeft: '80%',
+            paddingRight: '0%'
+        },    
+        '@media(max-width: 380px)': {
+            left: '30%',
+            width: '200px',
+            height: '200px',
+            marginRight: 0
+        },    
     },
     image2: {
         width: 400,
@@ -113,6 +168,20 @@ const useStyles = makeStyles((theme) => ({
         transform: 'rotate(-10deg)',
         marginTop: '-90%',
         zIndex: -5,
+        '@media(max-width: 450px)': {
+            left: '30%',
+            width: '300px',
+            height: '300px',
+            marginRight: '40%',
+            // paddingLeft: '80%',
+            paddingRight: '0%'
+        },
+        '@media(max-width: 380px)': {
+            left: '30%',
+            width: '200px',
+            height: '200px',
+            marginRight: '40%'
+        },    
     },
     anchor: {
         padding: theme.spacing(1),
@@ -138,7 +207,27 @@ const useStyles = makeStyles((theme) => ({
         color: '#FFFFFF',
         '@media(max-width: 400px)': {
             padding: theme.spacing(0),
-        }
+        },
+        '@media(max-width: 420px)': {
+            left: '30%',
+            height: '3vh',
+            fontSize: '15px',
+            lineHeight: '45%',
+            display: 'flex',
+            marginTop: '1%',
+            flexDirection: 'column',
+            marginLeft: '-10%'
+        }, 
+        '@media(max-width: 380px)': {
+            left: '30%',
+            height: '3vh',
+            fontSize: '15px',
+            lineHeight: '45%',
+            display: 'flex',
+            marginTop: '1%',
+            flexDirection: 'column',
+            marginLeft: '-10%'
+        },  
     },
     anchor1: {
         padding: theme.spacing(1),
@@ -165,8 +254,38 @@ const useStyles = makeStyles((theme) => ({
         position: 'absolute',
         width: '500px',
         height: '500px',
-        left: '911px',
-        top: '200px'
+        left: '58rem',
+        top: '200px',
+        '@media(max-width: 1220px)': {
+            padding: theme.spacing(0),
+            left: '60%',
+    },
+    '@media(max-width: 1157px)': {
+        padding: theme.spacing(0),
+        left: '58%',
+},
+    '@media(max-width: 400px)': {
+        padding: theme.spacing(0),
+        left: '40%'
+    },
+    '@media(max-width: 980px)': {
+        padding: theme.spacing(0),
+        left: '30%',
+    },
+    '@media(max-width: 450px)': {
+        left: '30%',
+        width: '400px',
+        height: '400px',
+        margingLeft: '1%',
+        paddingLeft: '1%',
+        marginRight: 0
+    },  
+    '@media(max-width: 380px)': {
+        left: '30%',
+        width: '400px',
+        height: '400px',
+        marginRight: 0
+    },     
     },
     body: {
         fontFamily: 'Poppins, sans-serif',

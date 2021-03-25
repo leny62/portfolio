@@ -36,9 +36,16 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex',
         justifyContent: 'center',
         backgroundColor: '#FFFFFF',
-        
-        // backgroundImage: `url(${bg})`,
-        backgroundRepeat: 'no-repeat',
+        '@media(max-width: 1024px)': {
+            width: '44.6%',
+            marginLeft: 3,
+            color: 357676
+        },
+        '@media(max-width: 230px)': {
+            width: '50%',
+            marginLeft: 3,
+            color: 357676
+        },
         '@media(max-width: 664px)': {
             padding: theme.spacing(0),
             marginLeft: '5%',
@@ -61,8 +68,8 @@ const useStyles = makeStyles((theme) => ({
         },
         '@media(max-width: 1281px)': {
             marginLeft: '5%',
-            width: '100%',
-            height: '100vh',
+            // width: '100%',
+            // height: '100vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -120,6 +127,17 @@ const useStyles = makeStyles((theme) => ({
     },
     grid: {
         color: '#000000',
+        '@media(max-width: 10240px)': {
+            width: '300%',
+            heigh: '100vh',
+            padding: theme.spacing(2),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'left',
+            marginTop: '1rem',
+            marginBottom: '3rem',
+            paddingBottom: '1rem',
+        },  
         '@media(max-width: 710px)': {
             padding: theme.spacing(3),
             display: 'flex',
@@ -130,11 +148,24 @@ const useStyles = makeStyles((theme) => ({
     },
     h1: {
         color: '#42645A',
+        '@media(max-width: 1024px)': {
+            padding: theme.spacing(1),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            paddingTop: '1rem'
+        }  
     },
     about: {
         padding: theme.spacing(4),
         display: 'flex',
         flexDirection: 'column',
+        '@media(max-width: 1024px)': {
+            width: '100%',
+            padding: theme.spacing(2),
+            display: 'flex',
+            flexDirection: 'column',
+        },  
         '@media(max-width: 1010px)': {
             padding: theme.spacing(2),
             display: 'flex',
@@ -145,6 +176,13 @@ const useStyles = makeStyles((theme) => ({
     body: {
         fontFamily: 'Poppins, sans-serif',
         color: '#42645A',
+        '@media(max-width: 1024px)': {
+            width: '100%',
+            backgroundColor: 'red',
+            paddingTop: 0,
+            marginLeft: 25,
+            color: 357676
+        },
         '@media(max-width: 400px)': {
             paddingTop: 0,
             marginLeft: 25,

@@ -48,27 +48,60 @@ const useStyles = makeStyles((theme) => ({
           display: 'flex',
           flexDirection: 'row',
           alignItems: 'left',
-          width: '100%',
+          width: '85%',
           height: 70,
           position: 'relative'
 
       },
-        '@media(max-width: 920px)': {
+      '@media(max-width: 1024px)': {
+        width: '50%',
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        paddingTop: theme.spacing(2),
+        position: 'relative'
+    },
+      '@media(max-width: 920px)': {
             justifyContent: 'space-between',
             flexDirection: 'row',
             paddingTop: theme.spacing(2),
             position: 'relative'
         },
-        '@media(max-width: 805px)': {
+      '@media(max-width: 805px)': {
             justifyContent: 'space-between',
             flexDirection: 'row',
             position: 'relative'
         },
-        '@media(max-width: 605px)': {
+      '@media(max-width: 600px)': {
+          width: '93.3%', 
           justifyContent: 'space-between',
           flexDirection: 'row',
           position: 'relative'
-      }
+      },
+      '@media(max-width: 414px)': {
+        width: '100%', 
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        position: 'relative'
+    },
+      '@media(max-width: 411px)': {
+        width: '99.9%', 
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        position: 'relative'
+    },
+      '@media(max-width: 375px)': {
+          width: '149.8%',
+          justifyContent: 'space-between',
+          flexDirection: 'row',
+    },
+    '@media(max-width: 360px)': {
+      width: '154.7%',
+    },
+    '@media(max-width: 280px)': {
+      width: '128%',
+      justifyContent: 'space-between',
+      flexDirection: 'row',
+}
     },
     logo: {
       width: "10%",
@@ -78,8 +111,14 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
         height: '100px',
         paddingLeft: 10,
-
     },
+    '@media(max-width: 375px)': {
+      justifyContent: 'center',
+      height: '100px',
+      paddingLeft: '6px',
+      paddingTop: '2px',
+      paddingBottom: '8px'
+  }
     },
     icon: {
         width: 100,
@@ -130,8 +169,11 @@ const useStyles = makeStyles((theme) => ({
             opacity: 0.7,
         },
         '@media(max-width: 400px)': {
-            padding: theme.spacing(0),
-        }  
+            padding: theme.spacing(1),
+        },
+        '@media(max-width: 375px)': {
+          padding: theme.spacing(1),
+      }    
     },
     container: {
         alignItems: "center",

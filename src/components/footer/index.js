@@ -24,14 +24,25 @@ const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         zIndex: 5,
         borderTop: '0.001px solid #E0E0E0',
-        '@media(max-width: 1305px)': {
+        '@media(max-width: 1347px)': {
+            width: '99.9%',
+            height: 60,
+            zIndex: 5,
             display: 'flex',
             justifyContent: 'space-around',
             flexDirection: 'row',
             alignItems: 'center',
-            width: '100%',
+            position: 'relative'
+  
+        },
+        '@media(max-width: 1024px)': {
+            width: '99.9%',
             height: 60,
             zIndex: 5,
+            display: 'flex',
+            justifyContent: 'space-around',
+            flexDirection: 'row',
+            alignItems: 'center',
             position: 'relative'
   
         },
@@ -51,26 +62,21 @@ const useStyles = makeStyles((theme) => ({
             flexDirection: 'row',
             position: 'relative'
           },
-        '@media(max-width: 1210px)': {
+          '@media(max-width: 600px)': {
+            width: '104%',
             display: 'flex',
-            justifyContent: 'space-around',
             flexDirection: 'row',
-            alignItems: 'center',
-            width: '100%',
-            height: 60,
-            zIndex: 5,
-            position: 'relative'
-        },
-        '@media(max-width: 1100px)': {
+          },
+          '@media(max-width: 375px)': {
+            width: '149.99%',
             display: 'flex',
-            justifyContent: 'space-around',
             flexDirection: 'row',
-            alignItems: 'center',
-            width: '100%',
-            height: 60,
-            zIndex: 5,
-            position: 'relative'
-        }
+          },
+          '@media(max-width: 360px)': {
+            width: '157%',
+            display: 'flex',
+            flexDirection: 'row',
+          },
     },
     icon: {
         width: 52,
@@ -79,23 +85,91 @@ const useStyles = makeStyles((theme) => ({
         "&:hover": {
             transform: 'scale(1.2)',
             opacity: 0.7
-        }    
+        },
+        '@media(max-width: 414px)': {
+            width: 35,
+            height: 30,
+            padding: theme.spacing(1),
+
+        },   
+        '@media(max-width: 375px)': {
+            width: 35,
+            height: 30,
+            padding: theme.spacing(1),
+        },
+        '@media(max-width: 360px)': {
+            width: 35,
+            height: 30,
+            padding: theme.spacing(1),
+        },      
     },
     anchor: {
         padding: theme.spacing(1),
         '@media(max-width: 400px)': {
             padding: theme.spacing(0),
-        }
+        },
+        '@media(max-width: 375px)': {
+            width: 35,
+            height: 30,
+            marginBottom: '30px',
+            padding: theme.spacing(1),
+            display: 'flex',
+            flexDirection: 'row'
+        }, 
+        '@media(max-width: 414px)': {
+            width: 35,
+            height: 30,
+            marginBottom: '30px',
+            padding: theme.spacing(1),
+            display: 'flex',
+            flexDirection: 'row'
+        },     
     },
     body: {
         fontFamily: 'Poppins, sans-serif',
         color: 357676,
         alignItems: 'center',
         paddingRight: '25rem',
+        '@media(max-width: 414px)': {
+            fontSize: '12px',
+            paddingRight: 0,
+            paddingTop: 0,
+            marginLeft: 0,
+            marginRight: '1rem',
+            marginBottom: '1rem',
+            color: 357676
+        },
+        '@media(max-width: 600px)': {
+            fontSize: '12px',
+            paddingRight: 0,
+            paddingTop: 0,
+            marginLeft: 0,
+            marginRight: '1rem',
+            marginBottom: '1rem',
+            color: 357676
+        },
         '@media(max-width: 400px)': {
             justifyContent: 'space-around',
             paddingTop: 20,
             marginLeft: 25,
+            color: 357676
+        },
+        '@media(max-width: 375px)': {
+            fontSize: '12px',
+            paddingRight: 0,
+            paddingTop: 0,
+            marginLeft: 0,
+            marginRight: '1rem',
+            marginBottom: '1rem',
+            color: 357676
+        },
+        '@media(max-width: 360px)': {
+            fontSize: '12px',
+            paddingRight: '9rem',
+            paddingTop: 0,
+            marginLeft: 0,
+            marginRight: '1rem',
+            marginBottom: '1rem',
             color: 357676
         },
         '@media(max-width: 230px)': {
@@ -114,14 +188,14 @@ const Footer = () => {
         <>
             <CssBaseline />
             <footer className={classes.root}>
-                <div>
-                    <a href="/" target="_blank" rel="noopener noreferrer" className={classes.anchor}>
+                <div className={classes.anchor}>
+                    <a href="/" target="_blank" rel="noopener noreferrer" >
                         <img src={gitHubIcon} alt="instagram link icon" className={classes.icon}/>
                     </a>
-                    <a href="/" target="_blank" rel="noopener noreferrer" className={classes.anchor}>
+                    <a href="/" target="_blank" rel="noopener noreferrer" >
                         <img src={linkedIn} alt="linkedin link icon" className={classes.icon}/>   
                     </a>
-                    <a href="/" target="_blank" rel="noopener noreferrer" className={classes.anchor}>
+                    <a href="/" target="_blank" rel="noopener noreferrer" >
                         <img src={twitter} alt="twitter link icon" className={classes.icon}/>
                     </a>
                 </div>
