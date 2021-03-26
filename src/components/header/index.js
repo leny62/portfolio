@@ -72,11 +72,17 @@ const useStyles = makeStyles((theme) => ({
             position: 'relative'
         },
       '@media(max-width: 600px)': {
-          width: '59.7%', 
+          width: '93.3%', 
           justifyContent: 'space-between',
           flexDirection: 'row',
           position: 'relative'
       },
+      '@media(max-width: 414px)': {
+        width: '100%', 
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        position: 'relative'
+    },
       '@media(max-width: 411px)': {
         width: '99.9%', 
         justifyContent: 'space-between',
@@ -84,7 +90,7 @@ const useStyles = makeStyles((theme) => ({
         position: 'relative'
     },
       '@media(max-width: 375px)': {
-          width: '100%',
+          width: '149.8%',
           justifyContent: 'space-between',
           flexDirection: 'row',
     },
