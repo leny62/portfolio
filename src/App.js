@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
 import Routes from './Routes';
+import { GlobalProvider } from './context/GlobalState';
 
 function App() {
   return (
-     <Routes />
+    <GlobalProvider>
+      <Routes />
+    </GlobalProvider>
   );
 }
 

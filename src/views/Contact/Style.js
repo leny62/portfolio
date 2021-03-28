@@ -1,90 +1,154 @@
-import { makeStyles } from '@material-ui/core/styles';
+import React, { useState } from 'react'
+import Footer from '../../components/footer';
+import Header from '../../components/header/';
+import Paper from '@material-ui/core/Paper';
+import Button from '@material-ui/core/Button';
+import Card from '@material-ui/core/Card';
+import FormControl from '@material-ui/core/FormControl';
+import InputLabel from '@material-ui/core/InputLabel';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import TextField from '@material-ui/core/TextField';
+import { useHistory } from 'react-router-dom';
+// import useMediaQuery from '@material-ui/core/useMediaQuery';
+import axios from 'axios';
+import {useStyles} from '../../styles/contactStyles';
+// import { createMuiTheme } from '@material-ui/core';
+import toaster from '../../helpers/toasts';
+import personnal_vector from "../../assets/images/Personnal_Vector.svg";
+import subject_vector from "../../assets/images/Subject_Vector.svg";
+// import config from '../../config/config';
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-around',
-        width:'100%',
-        height: 70,
-        background: '#FFFDFD',
-        opacity: 0.8,
-        alignItems: 'center',
-        zIndex: 5,
-        borderTop: '2px solid #E0E0E0',
-        '@media(max-width: 610px)': {
-            flexDirection: 'column',
-            paddingTop: theme.spacing(1)
-        },
-        '@media(max-width: 405px)': {
-            justifyContent: 'unset',
-            // height: '100px'
-        }
-    },
-    icon: {
-        width: 100,
-        height: 100,
-        padding: theme.spacing(1),
-        "&:hover": {
-            transform: 'scale(1.2)',
-            opacity: 0.7
-        }    
-    },
-    icon1: {
-        width: 100,
-        height: 100,
-        paddingLeft: '2',
-        marginLeft: '2',
-        padding: theme.spacing(1),
-        "&:hover": {
-            transform: 'scale(1.2)',
-            opacity: 0.7
-        }    
-    },
-    anchor: {
-        padding: theme.spacing(1),
-        textDecoration: 'none',
-        color: '#42645A',
-        '@media(max-width: 400px)': {
-            padding: theme.spacing(0),
-        }
-    },
-    anchor1: {
-        padding: theme.spacing(1),
-        paddingLeft: 3,
-        color: '#42645A',
-        '@media(max-width: 400px)': {
-            padding: theme.spacing(0),
-        }
-    },
-    pageLinks: {
-        fontSize: 22, 
-        padding: theme.spacing(1),
-        textDecoration: 'none',
-        color: '#42645A',
-        "&:hover": {
-            transform: 'scale(1.4)',
-            opacity: 0.7
-        },
-        '@media(max-width: 400px)': {
-            padding: theme.spacing(0),
-        }  
-    },
-    body: {
-        fontFamily: 'Poppins, sans-serif',
-        color: '#42645A',
-        paddingTop: '20rem',
-        '@media(max-width: 400px)': {
-            paddingTop: 20,
-            marginLeft: 25,
-            color: 357676
-        },
-        '@media(max-width: 230px)': {
-            paddingTop: 0,
-            marginLeft: 3,
-            color: 357676
-        }
-    }
-}));
+// const { REACT_APP_BACKEND_URL } = config;
 
-export default useStyles;
+const Contact = () => {
+  const classes = useStyles();
+//   const theme = createMuiTheme();
+  let history = useHistory();
+  
+//   const matches = useMediaQuery(theme.breakpoints.up('md'));
+  
+  const [values, setValues] = useState({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+  });
+  
+  const handleChange = (prop) => (event) => {
+      setValues({ ...values, [prop]: event.target.value });
+  };
+  
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+          const { name, email, subject, message } = values;
+          
+          if (name === '') {
+              toaster('Name is required!', 'warn');
+              return false;
+          } else if (email === '') {
+              toaster('Email is required!', 'warn');
+              return false;
+          } else if (subject === '') {
+              toaster('Subject is required!', 'warn');
+              return false;
+          } else if (message === '') {
+              toaster('Message is required!', 'warn');
+              return false;
+          } else {
+              await axios.post(`${''}/inquiry`, {
+                  name,
+                  email,
+                  subject,
+                  message
+              });
+              toaster('Question submitted successfully!', 'success')
+          setTimeout(() => {
+              history.push(`/home`);
+          }, 3000);    
+          }
+      } catch (error) {
+          toaster(error, 'Internal server error');
+      }
+  }
+
+    return (
+        <>
+        <Header />
+        <div className={classes.pageContainer}>
+        <Paper className={classes.paper}>
+        <Card className={classes.pos}>
+                        <h1 className={classes.h1}>Contact Me</h1>
+                        <FormControl fullWidth className={classes.root} variant="outlined">
+                            <InputLabel htmlFor="outlined-name" data-testid="name-label">Your Name</InputLabel>
+                            <OutlinedInput className={classes.input}
+                            id="outlined-name"
+                            type='text'
+                            value={values.name}
+                            onChange={handleChange('name')}
+                            inputProps={{'data-testid':"name-value"}} 
+                            endAdornment={<InputAdornment position="end">
+                        <img src={personnal_vector} alt="profile" style={{ width: '15px' }}/>
+                            </InputAdornment>}
+                            labelWidth={80}
+                            />
+                        </FormControl>
+                        <FormControl fullWidth className={classes.root} variant="outlined">
+                            <InputLabel htmlFor="outlined-email" data-testid="email-label">Your Email</InputLabel>
+                            <OutlinedInput
+                            id="outlined-email"
+                            type='text'
+                            value={values.email}
+                            onChange={handleChange('email')}
+                            inputProps={{'data-testid':"email-value"}} 
+                            endAdornment={<InputAdornment position="end">@</InputAdornment>}
+                            labelWidth={80}
+                            />
+                        </FormControl>
+                        <FormControl fullWidth className={classes.root} variant="outlined">
+                            <InputLabel htmlFor="outlined-subject" data-testid="subject-label">Subject</InputLabel>
+                            <OutlinedInput
+                            id="outlined-subject"
+                            type='text'
+                            value={values.subject}
+                            onChange={handleChange('subject')}
+                            inputProps={{'data-testid':"subject-value"}} 
+                            endAdornment={<InputAdornment position="end">
+                        <img src={subject_vector} alt="profile" style={{ width: '15px' }}/>
+                            </InputAdornment>}
+                            labelWidth={60}
+                            />
+                        </FormControl>
+                        <FormControl  className={classes.root} variant="outlined">
+                        <TextField
+                            id="outlined-multiline-static"
+                            label="Message"
+                            multiline
+                            rows={4}
+                            variant="outlined"
+                            className={classes.textField}
+                            value={values.message}
+                            onChange={handleChange('message')}
+                        />
+                        </FormControl>
+                        <FormControl  className={classes.root} variant="outlined">
+                        <Button 
+                            variant="contained" 
+                            color="primary" 
+                            className={classes.action} 
+                            value={values.name}
+                            onClick={handleSubmit} 
+                            data-testid="submit"
+                        >Submit
+                        </Button>
+                        </FormControl>
+                    </Card>
+        </Paper>
+        </div>
+        <Footer />
+        </>
+    )
+}
+
+export default Contact;

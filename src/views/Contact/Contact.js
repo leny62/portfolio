@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react';
+import { GlobalContext } from '../../context/GlobalState';
 import Footer from '../../components/footer';
 import Header from '../../components/header/';
 import Paper from '@material-ui/core/Paper';
@@ -9,14 +10,15 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
-import { useHistory } from 'react-router-dom';
+// import { useHistory } from 'react-router-dom';
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
-import axios from 'axios';
+// import axios from 'axios';
 import {useStyles} from '../../styles/contactStyles';
 // import { createMuiTheme } from '@material-ui/core';
-import toaster from '../../helpers/toasts';
+// import toaster from '../../helpers/toasts';
 import personnal_vector from "../../assets/images/Personnal_Vector.svg";
 import subject_vector from "../../assets/images/Subject_Vector.svg";
+// import Toast from '../../helpers/toasts';
 // import config from '../../config/config';
 
 // const { REACT_APP_BACKEND_URL } = config;
@@ -24,53 +26,32 @@ import subject_vector from "../../assets/images/Subject_Vector.svg";
 const Contact = () => {
   const classes = useStyles();
 //   const theme = createMuiTheme();
-  let history = useHistory();
-  
-//   const matches = useMediaQuery(theme.breakpoints.up('md'));
-  
-  const [values, setValues] = useState({
+  const [values, setValues ] = useState({
       name: '',
       email: '',
       subject: '',
-      message: '',
-  });
-  
+      message: ''
+  });  
+  const { sendInquiry } = useContext(GlobalContext);
+
   const handleChange = (prop) => (event) => {
-      setValues({ ...values, [prop]: event.target.value });
-  };
-  
-  const handleSubmit = async (e) => {
+    setValues({ ...values, [prop]: event.target.value });
+};
+
+  const onSubmit = e => {
       e.preventDefault();
-      try {
-          const { name, email, subject, message } = values;
-          
-          if (name === '') {
-              toaster('Name is required!', 'warn');
-              return false;
-          } else if (email === '') {
-              toaster('Email is required!', 'warn');
-              return false;
-          } else if (subject === '') {
-              toaster('Subject is required!', 'warn');
-              return false;
-          } else if (message === '') {
-              toaster('Message is required!', 'warn');
-              return false;
-          } else {
-              await axios.post(`${''}/inquiry`, {
-                  name,
-                  email,
-                  subject,
-                  message
-              });
-              toaster('Question submitted successfully!', 'success')
-          setTimeout(() => {
-              history.push(`/home`);
-          }, 3000);    
-          }
-      } catch (error) {
-          toaster(error, 'Internal server error');
+      const { name, email, subject, message } = values;
+
+      const newInquiry = {
+          id: Math.floor(Math.random() * 100000),
+          name: name,
+          email: email,
+          subject: subject,
+          message: message
       }
+
+      sendInquiry(newInquiry);
+      console.log(newInquiry);
   }
 
     return (
@@ -138,7 +119,8 @@ const Contact = () => {
                             color="primary" 
                             className={classes.action} 
                             value={values.name}
-                            onClick={handleSubmit} 
+                            onSubmit={onSubmit}
+                            // onClick={handleSubmit} 
                             data-testid="submit"
                         >Submit
                         </Button>
