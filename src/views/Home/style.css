@@ -1,0 +1,6 @@
+.image {
+    transform: rotate(-10deg);
+    z-index: -5;
+    left: 400px;
+    top: 40px;
+}

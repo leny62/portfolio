@@ -19,10 +19,15 @@ const LinksFnc = () => {
       isActive: false,
     },
     {
+      url: "/blogs",
+      text: 'Blogs',
+      isActive: false,
+    },
+    {
       url: "/contact",
       text: 'Contact',
       isActive: false,
-    },
+    }
   ];}
 
 
@@ -262,6 +267,6 @@ const Header = () => {
           </List>
       </AppBar>
     );
-}
+} 
 
 export default Header;

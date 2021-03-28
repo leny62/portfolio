@@ -1,16 +1,15 @@
-import React from 'react'
-import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import bg from '../../assets/images/bg.png'
 
-const useStyles = makeStyles((theme) => ({
+
+export const useStyles = makeStyles((theme) => ({
     root: {
         display: 'flex',
+        marginTop: '4.2rem',
         flexDirection: 'row',
         justifyContent: 'space-around',
         width:'100%',
         height: '100%',
-        background: '#FFFDFD',
+        background: '#FFFFFF',
         opacity: 0.8,
         alignItems: 'center',
         zIndex: 5,
@@ -21,18 +20,27 @@ const useStyles = makeStyles((theme) => ({
         },
         '@media(max-width: 405px)': {
             justifyContent: 'unset',
-            // height: '100px'
         }
     },
     pageContainer: {
+        marginTop: '4.48rem',
         width: '100%',
         color: 'white',
         height: '100vh',
         display: 'flex',
+        flexDirection: 'row',
         justifyContent: 'center',
-        
-        backgroundImage: `url(${bg})`,
-        backgroundRepeat: 'no-repeat',
+        backgroundColor: '#FFFFFF',
+        '@media(max-width: 1024px)': {
+            width: '44.6%',
+            marginLeft: 3,
+            color: 357676
+        },
+        '@media(max-width: 230px)': {
+            width: '50%',
+            marginLeft: 3,
+            color: 357676
+        },
         '@media(max-width: 664px)': {
             padding: theme.spacing(0),
             marginLeft: '5%',
@@ -55,8 +63,8 @@ const useStyles = makeStyles((theme) => ({
         },
         '@media(max-width: 1281px)': {
             marginLeft: '5%',
-            width: '100%',
-            height: '100vh',
+            // width: '100%',
+            // height: '100vh',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
@@ -112,9 +120,64 @@ const useStyles = makeStyles((theme) => ({
             padding: theme.spacing(0),
         }  
     },
+    grid: {
+        color: '#000000',
+        '@media(max-width: 10240px)': {
+            width: '100%',
+            heigh: '100vh',
+            padding: theme.spacing(2),
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'left',
+            marginTop: '1rem',
+            marginBottom: '3rem',
+            paddingBottom: '1rem',
+        },  
+        '@media(max-width: 710px)': {
+            padding: theme.spacing(3),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginTop: '10rem'
+        }  
+    },
+    h1: {
+        color: '#42645A',
+        '@media(max-width: 1024px)': {
+            padding: theme.spacing(1),
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            paddingTop: '1rem'
+        }  
+    },
+    about: {
+        padding: theme.spacing(4),
+        display: 'flex',
+        flexDirection: 'column',
+        '@media(max-width: 1024px)': {
+            width: '100%',
+            padding: theme.spacing(2),
+            display: 'flex',
+            flexDirection: 'column',
+        },  
+        '@media(max-width: 1010px)': {
+            padding: theme.spacing(2),
+            display: 'flex',
+            flexDirection: 'column'
+        }  
+    },
+
     body: {
         fontFamily: 'Poppins, sans-serif',
         color: '#42645A',
+        '@media(max-width: 1024px)': {
+            width: '100%',
+            backgroundColor: 'red',
+            paddingTop: 0,
+            marginLeft: 25,
+            color: 357676
+        },
         '@media(max-width: 400px)': {
             paddingTop: 0,
             marginLeft: 25,
@@ -127,19 +190,3 @@ const useStyles = makeStyles((theme) => ({
         }
     }
 }));
-
-
-const Skills = () => {
-    const classes = useStyles();
-    return (
-        <>
-        <div className={classes.pageContainer}>
-        <Typography>
-          <h1>Hello, Welcome</h1>
-        </Typography>
-        </div>
-        </>
-    )
-}
-
-export default Skills;
