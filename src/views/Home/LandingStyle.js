@@ -32,6 +32,7 @@ export const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         marginTop: '4.3rem',
         backgroundImage: `url(${bg})`,
+        backgroundSize: "cover",
         backgroundRepeat: 'no-repeat',
         '@media(max-width: 665px)': {
             padding: theme.spacing(0),
@@ -88,6 +89,7 @@ export const useStyles = makeStyles((theme) => ({
             justifyContent: 'space-between',
             backgroundImage: `url(${bg})`,
             backgroundRepeat: 'no-repeat',
+            backgroundSize: "cover",
             width: '10%',
             height: '100vh',
             paddingRight: '3.5%',
@@ -100,6 +102,7 @@ export const useStyles = makeStyles((theme) => ({
             flexDirection: 'column',
             justifyContent: 'space-between',
             backgroundImage: `url(${bg})`,
+            backgroundSize: "cover",
             backgroundRepeat: 'no-repeat',
             width: '100%',
             height: '100vh'

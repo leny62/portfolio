@@ -130,6 +130,7 @@ export const useStyles = makeStyles((theme) => ({
         alignItems: 'center',
         backgroundImage: `url(${bg})`,
         backgroundRepeat: 'no-repeat',
+        backgroundSize: "cover",
         '@media(max-width: 664px)': {
         padding: theme.spacing(0),
         marginLeft: '5%',
