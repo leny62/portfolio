@@ -16,13 +16,14 @@ const Landing = () => {
         <Header />
         <div className={classes.pageContainer}>
         <Typography className={classes.intro}>
+        <h1>Hello,</h1>
         <Typical
-        steps={['Hello', 2000,"I'm Leny", 2000]}
+        steps={["I'm Leny", 3000,"Welcome to lenycode", 3000]}
         loop= {Infinity}
         wrapper="h1"
       />
       <Typical
-        steps={['Discover me,', 2000, 'Welcome to Lenycode:', 2000]}
+        steps={['I develop Software products,', 3000, 'I design creative arts!', 3000]}
         loop= {Infinity}
         wrapper="h2"
       />
