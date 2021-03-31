@@ -1,5 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
 import bg from '../../assets/images/bg.png'
+import LenyImage1 from '../../assets/images/Lenyim1.png';
 
 export const useStyles = makeStyles((theme) => ({
 
@@ -15,7 +16,8 @@ export const useStyles = makeStyles((theme) => ({
         paddingTop: '30rem',
         zIndex: 5,
         borderTop: '2px solid #E0E0E0',
-        '@media(max-width: 610px)': {
+        '@media(max-width: 1338px)': {
+            display: 'flex',
             flexDirection: 'column',
             paddingTop: theme.spacing(1)
         },
@@ -32,81 +34,42 @@ export const useStyles = makeStyles((theme) => ({
         justifyContent: 'space-between',
         marginTop: '4.3rem',
         backgroundImage: `url(${bg})`,
+        backgroundPosition: 'center',
+        backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
-        backgroundRepeat: 'no-repeat',
-        '@media(max-width: 665px)': {
-            padding: theme.spacing(0),
-            marginLeft: '0',
-            width: '100%',
-            height: '100vh',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: '30%',
-            backgroundRepeat: 'no-repeat'
+        position: "relative",
+        alignItems: "center",
+        [theme.breakpoints.down("sm")]: {
+            height: 300,
+            fontSize: "3em"
         },
-        '@media(max-width: 980px)': {
-            padding: theme.spacing(50),
+        '@media(max-width: 1438px)': {
+            width: '90%',
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between'
-        },    
-        '@media(max-width: 554px)': {
-            marginLeft: '0',
-            width: '100%',
-            height: '100vh',
-            padding: theme.spacing(50),
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginTop: '0',
-            backgroundRepeat: 'no-repeat',
+            flexDirection: 'row'
         },
-        '@media(max-width: 605px)': {
-            width: '100%',
-            height: '100vh',
-            padding: theme.spacing(50),
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginTop: '0',
-            margingLeft: '0'
+        '@media(max-width: 1410px)': {
+            width: '92.58%',
         },
-        '@media(max-width: 1281px)': {
-            width: '100%',
+        '@media(max-width: 1334px) and (max-width: 1330px)': {
+            width: '92.6%',
             height: '100vh',
+            marginTop: 0,
             display: 'flex',
-            justifyContent: 'space-between',
-            alignItems: 'center',
-            marginTop: '0',
+            flexDirection: 'row'
         },
-        '@media(max-width: 450px)': {
-            padding: theme.spacing(50),
+        '@media(max-width: 1062px)': {
             display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between',
-            backgroundImage: `url(${bg})`,
-            backgroundRepeat: 'no-repeat',
-            backgroundSize: "cover",
-            width: '10%',
+            flexDirection: 'column'
+        },
+        '@media(max-width: 1050px)': {
+            width: '99.89%',
             height: '100vh',
-            paddingRight: '3.5%',
-            marginLeft: 0,
-            marginRight: 0
-        }, 
-        '@media(max-width: 380px)': {
-            padding: theme.spacing(50),
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between',
-            backgroundImage: `url(${bg})`,
-            backgroundSize: "cover",
-            backgroundRepeat: 'no-repeat',
-            width: '100%',
-            height: '100vh'
-        },   
+            position: "relative",
+            alignItems: "center"
+        },
     },
     icon: {
         width: 100,
@@ -193,7 +156,7 @@ export const useStyles = makeStyles((theme) => ({
     intro: {
         position: 'absolute',
         height: '5px',
-        marginTop: '10rem',
+        marginBottom: '20rem',
         marginLeft: '5rem',
         padding: '5rem',
         fontFamily: 'Roboto',
@@ -204,6 +167,22 @@ export const useStyles = makeStyles((theme) => ({
         display: 'flex',
         flexDirection: 'column',
         color: '#FFFFFF',
+        '@media(max-width: 1334px)': {
+            fontSize: '27px',
+            marginLeft: '2rem',
+        },
+        '@media(max-width: 1306px)': {
+            fontSize: '22px',
+            marginLeft: '1rem',
+        },
+        '@media(max-width: 1062px)': {
+           position: 'relative'
+        },
+        '@media(max-width: 1050px)': {
+            position: 'absolute',
+            marginTop: '50rem',
+
+        },
         '@media(max-width: 400px)': {
             padding: theme.spacing(0),
         },
@@ -250,41 +229,40 @@ export const useStyles = makeStyles((theme) => ({
         }  
     },
     avatar: {
-        position: 'absolute',
-        width: '500px',
+        backgroundImage: `url(${LenyImage1})`,
         height: '500px',
-        left: '58rem',
-        top: '200px',
-        '@media(max-width: 1220px)': {
-            padding: theme.spacing(0),
-            left: '60%',
-    },
-    '@media(max-width: 1157px)': {
-        padding: theme.spacing(0),
-        left: '58%',
-},
-    '@media(max-width: 400px)': {
-        padding: theme.spacing(0),
-        left: '40%'
-    },
-    '@media(max-width: 980px)': {
-        padding: theme.spacing(0),
-        left: '30%',
-    },
-    '@media(max-width: 450px)': {
-        left: '30%',
-        width: '400px',
-        height: '400px',
-        margingLeft: '1%',
-        paddingLeft: '1%',
-        marginRight: 0
-    },  
-    '@media(max-width: 380px)': {
-        left: '30%',
-        width: '400px',
-        height: '400px',
-        marginRight: 0
-    },     
+        width: '500px',
+        backgroundPosition: 'center',
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        position: "relative",
+        justifyContent: "center",
+        display: "flex",
+        alignItems: "center",
+        color: "#fff",
+        fontSize: "4rem",
+        marginLeft: "56rem",
+        marginBottom: '1rem',
+        [theme.breakpoints.down("sm")]: {
+            height: 300,
+            fontSize: "3em"
+        },
+        '@media(max-width: 1438px)': {
+            width: '90%',
+            marginLeft: "50rem",
+        },
+        '@media(max-width: 1334px)': {
+            width: '90%',
+            marginLeft: "50%",
+        },
+        '@media(max-width: 1062px)': {
+            position: 'absolute'
+         },
+         '@media(max-width: 1050px)': {
+            position: 'absolute',
+            marginTop: '15rem',
+            marginLeft: "5rem"
+        },
     },
     body: {
         fontFamily: 'Poppins, sans-serif',

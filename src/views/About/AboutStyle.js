@@ -122,6 +122,10 @@ export const useStyles = makeStyles((theme) => ({
     },
     grid: {
         color: '#000000',
+        [theme.breakpoints.down("sm")]: {
+            height: 300,
+            fontSize: "3em"
+        },
         '@media(max-width: 10240px)': {
             width: '100%',
             heigh: '100vh',

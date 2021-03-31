@@ -48,7 +48,16 @@ const useStyles = makeStyles((theme) => ({
         zIndex: 5,
         borderTop: '2px solid #E0E0E0',
         textDecoration: 'none',
-      '@media(max-width: 1305px)': {
+        '@media(max-width: 1336px)': {
+          justifyContent: 'space-between',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'left',
+          width: '100%',
+          height: 70,
+          position: 'relative'
+      },
+      '@media(max-width: 1305px) and (max-width: 664px)': {
           justifyContent: 'space-between',
           display: 'flex',
           flexDirection: 'row',
@@ -58,11 +67,13 @@ const useStyles = makeStyles((theme) => ({
           position: 'relative'
 
       },
-      '@media(max-width: 1024px)': {
-        width: '50%',
+      '@media(max-width: 1024px)  and (max-width: 664px)': {
         justifyContent: 'space-between',
+        display: 'flex',
         flexDirection: 'row',
-        paddingTop: theme.spacing(2),
+        alignItems: 'left',
+        width: '100%',
+        height: 90,
         position: 'relative'
     },
       '@media(max-width: 920px)': {
@@ -77,7 +88,7 @@ const useStyles = makeStyles((theme) => ({
             position: 'relative'
         },
       '@media(max-width: 600px)': {
-          width: '93.3%', 
+          width: '100.3%', 
           justifyContent: 'space-between',
           flexDirection: 'row',
           position: 'relative'

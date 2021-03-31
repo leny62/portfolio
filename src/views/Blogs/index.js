@@ -15,6 +15,7 @@ import Box from '@material-ui/core/Box';
 import Pagination from '@material-ui/lab/Pagination';
 import { Typography } from '@material-ui/core';
 import { useStyles } from './Style';
+import Footer from '../../components/footer';
 
 function Blog() {
     const classes = useStyles();
@@ -186,6 +187,7 @@ function Blog() {
         <Box my={4} className={classes.paginationContainer}>
             <Pagination count={10}/>
         </Box>
+        <Footer />
       </ThemeProvider>
     )
 }

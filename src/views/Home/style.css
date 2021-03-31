@@ -1,6 +1,9 @@
 .image {
-    transform: rotate(-10deg);
-    z-index: -5;
+    transform: rotate(-0deg);
+    /* z-index: -5; */
     left: 400px;
     top: 40px;
+    background-color: black;
+    padding-Right: -100%;
+    margin-right: 0px;
 }

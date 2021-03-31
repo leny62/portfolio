@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalState';
+import React, { useState } from 'react';
+// import { GlobalContext } from '../../context/GlobalState';
 import Footer from '../../components/footer';
 import Header from '../../components/header/';
 import Paper from '@material-ui/core/Paper';
@@ -85,10 +85,10 @@ const Contact = () => {
         <Card className={classes.pos}>
                         <h1 className={classes.h1}>Contact Me</h1>
                         <form onSubmit={handleSubmit}>
-                        <input value={values.name} id="name" name='name' onChange={(e) => setValues({ ...values, name: e.target.values})} />
+                        {/* <input value={values.name} id="name" name='name' onChange={(e) => setValues({ ...values, name: e.target.values})} />
                         <button>Submit</button>
-                        </form>
-                        {/* <FormControl fullWidth className={classes.root} variant="outlined">
+                        </form> */}
+                        <FormControl fullWidth className={classes.root} variant="outlined">
                             <InputLabel htmlFor="outlined-name" data-testid="name-label">Your Name</InputLabel>
                             <OutlinedInput className={classes.input}
                             id="outlined-name"
@@ -151,8 +151,8 @@ const Contact = () => {
                             data-testid="submit"
                         >Submit
                         </Button>
-                        </FormControl> */}
-                        {/* </form> */}
+                        </FormControl>
+                      </form>
                     </Card>
         </Paper>
         </div>
