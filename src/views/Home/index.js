@@ -6,6 +6,7 @@ import { useStyles } from './LandingStyle';
 // import LenyImage1 from '../../assets/images/Lenyim1.png';
 import './style.css';
 import MyImage from './Image';
+import Box from '@material-ui/core/Box';
 import Typical from 'react-typical';
 
 
@@ -15,6 +16,12 @@ const Landing = () => {
         <>
         <Header />
         <div className={classes.pageContainer}>
+        <Box className={classes.avatar}>
+           <MyImage 
+          //  className="image"
+           className={classes.imagery}
+            />
+        </Box>
         <Typography className={classes.intro}>
         <h1>Hello,</h1>
         <Typical
@@ -27,17 +34,7 @@ const Landing = () => {
         loop= {Infinity}
         wrapper="h2"
       />
-           {/* <h1>Hello,</h1> 
-          <br />
-          <h1>Welcome to Lenycode:</h1>
-          <h3>I develop software products...</h3> */}
         </Typography>
-        <div className = {classes.avatar}>
-        <MyImage />
-        {/* <img src={LenyImage1} alt="LenyImage" className={classes.image1} effect='blur'/> */}
-        {/* <img src={LenyImage1} alt="LenyImage" className={classes.image2}/> */}
-        {/* <div className={classes.image2}>Hello</div> */}
-        </div>
         </div>
         <Footer />
         </>

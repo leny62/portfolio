@@ -1,5 +1,5 @@
-import React, { useState, useContext } from 'react';
-import { GlobalContext } from '../../context/GlobalState';
+import React, { useState } from 'react';
+// import { GlobalContext } from '../../context/GlobalState';
 import Footer from '../../components/footer';
 import Header from '../../components/header/';
 import Paper from '@material-ui/core/Paper';
@@ -10,6 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import TextField from '@material-ui/core/TextField';
+import { firebase } from '../../config/firebase';
 // import { useHistory } from 'react-router-dom';
 // import useMediaQuery from '@material-ui/core/useMediaQuery';
 // import axios from 'axios';
@@ -24,35 +25,57 @@ import subject_vector from "../../assets/images/Subject_Vector.svg";
 // const { REACT_APP_BACKEND_URL } = config;
 
 const Contact = () => {
+  const db = firebase.firestore();
+
   const classes = useStyles();
 //   const theme = createMuiTheme();
-  const [values, setValues ] = useState({
-      name: '',
-      email: '',
-      subject: '',
-      message: ''
-  });  
-  const { sendInquiry } = useContext(GlobalContext);
+  const initialData = {
+    id: '',
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  }
+  const [values, setValues ] = useState( initialData );  
+//   const { sendInquiry } = useContext(GlobalContext);
 
   const handleChange = (prop) => (event) => {
     setValues({ ...values, [prop]: event.target.value });
 };
 
-  const onSubmit = e => {
-      e.preventDefault();
-      const { name, email, subject, message } = values;
+  const handleSubmit = () => async (e) => {
+    e.preventDefault();
+    console.log('DATATAAAAAA');
+    try {
+        const inquiryData = await db.collection('inquiries').add({
+            name: values.name,
+            email: values.email,
+            subject: values.subject,
+            message: values.message,
+            date: new Date()
+        })
+        console.log('DATATAAAAAA', inquiryData);
+        setValues(initialData)
+    } catch (error) {
+     console.log('errrrroooooorrrr', error)   
+    }
+  };
 
-      const newInquiry = {
-          id: Math.floor(Math.random() * 100000),
-          name: name,
-          email: email,
-          subject: subject,
-          message: message
-      }
+//   const onSubmit = e => {
+//       e.preventDefault();
+//       const { name, email, subject, message } = values;
 
-      sendInquiry(newInquiry);
-      console.log(newInquiry);
-  }
+//       const newInquiry = {
+//           id: Math.floor(Math.random() * 100000),
+//           name: name,
+//           email: email,
+//           subject: subject,
+//           message: message
+//       }
+
+//       sendInquiry(newInquiry);
+//       console.log('akfjhb lahk c', values);
+//   }
 
     return (
         <>
@@ -61,6 +84,10 @@ const Contact = () => {
         <Paper className={classes.paper}>
         <Card className={classes.pos}>
                         <h1 className={classes.h1}>Contact Me</h1>
+                        <form onSubmit={handleSubmit}>
+                        {/* <input value={values.name} id="name" name='name' onChange={(e) => setValues({ ...values, name: e.target.values})} />
+                        <button>Submit</button>
+                        </form> */}
                         <FormControl fullWidth className={classes.root} variant="outlined">
                             <InputLabel htmlFor="outlined-name" data-testid="name-label">Your Name</InputLabel>
                             <OutlinedInput className={classes.input}
@@ -119,12 +146,13 @@ const Contact = () => {
                             color="primary" 
                             className={classes.action} 
                             value={values.name}
-                            onSubmit={onSubmit}
+                            // onSubmit={onSubmit}
                             // onClick={handleSubmit} 
                             data-testid="submit"
                         >Submit
                         </Button>
                         </FormControl>
+                      </form>
                     </Card>
         </Paper>
         </div>

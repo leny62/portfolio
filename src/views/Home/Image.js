@@ -14,15 +14,6 @@ const MyImage = ({ image }) => (
       effect="blur"
       
       />
-    <LazyLoadImage
-      className='image'
-      alt='Leny'
-      height='400px'
-      src={LenyImage1} // use normal <img> attributes as props
-      width='400pxx' 
-      effect="blur"
-      
-      />
   </div>
 );
  

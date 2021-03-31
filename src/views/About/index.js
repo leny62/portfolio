@@ -50,20 +50,20 @@ const About = () => {
                 INNOVATOR
 
             </h1>
-        <Grid container spacing={3} className={classes.grid}>
-        <Grid item xs={4}>
+        <Grid container spacing={3} className={classes.grid} my={100}>
+        <Grid item xs={4} sm={12} md={4}>
           <h1 style= {{color: '#42645A'}}>WHERE I HAVE BEEN</h1>
           <Typography>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo eget in lectus dui risus, facilisi sagittis. Justo, eget velit in in nunc pharetra, porttitor morbi viverra. Ullamcorper urna, feugiat quam morbi quam amet, quisque adipiscing. Enim tortor vel tellus commodo libero, enim sagittis sed. Pharetra felis eget nulla est diam duis non.
           </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={4} sm={6} md={4}>
               <h1 style= {{color: '#42645A'}}>WHAT AM DOING</h1>
               <Typography>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo eget in lectus dui risus, facilisi sagittis. Justo, eget velit in in nunc pharetra, porttitor morbi viverra. Ullamcorper urna, feugiat quam morbi quam amet, quisque adipiscing. Enim tortor vel tellus commodo libero, enim sagittis sed. Pharetra felis eget nulla est diam duis non.
               </Typography>
         </Grid>
-        <Grid item xs={4}>
+        <Grid item xs={4} sm={6} md={4}>
               <h1 style= {{color: '#42645A'}}>WHAT I HOPE TO DO</h1>
               <Typography>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Leo eget in lectus dui risus, facilisi sagittis. Justo, eget velit in in nunc pharetra, porttitor morbi viverra. Ullamcorper urna, feugiat quam morbi quam amet, quisque adipiscing. Enim tortor vel tellus commodo libero, enim sagittis sed. Pharetra felis eget nulla est diam duis non.
